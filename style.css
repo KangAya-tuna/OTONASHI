@@ -1,0 +1,142 @@
+/* OTONASHI — 기본 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #111111;
+  --paper: #ffffff;
+  --muted: #777777;
+}
+
+html {
+  min-height: 100%;
+  background: var(--paper);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Nanum Gothic', '나눔고딕', sans-serif;
+}
+
+.page {
+  width: min(100% - 32px, 720px);
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(36px, 8vh, 84px) 0 24px;
+}
+
+.site-header {
+  text-align: center;
+  margin-bottom: clamp(32px, 7vh, 68px);
+}
+
+.ant-mark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Nanum Gothic', '나눔고딕', sans-serif;
+  font-size: clamp(28px, 6vw, 38px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  line-height: 1.6;
+}
+
+.main-menu {
+  width: min(100%, 470px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 4.3vh, 36px);
+}
+
+.menu-button {
+  min-height: 112px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  text-align: center;
+  font-size: clamp(18px, 4.2vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.5;
+  transition: background-color 160ms ease, color 160ms ease,
+    transform 160ms ease;
+}
+
+.menu-button:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.menu-button:active {
+  transform: scale(0.985);
+}
+
+.menu-button:focus-visible {
+  outline: 3px solid #777777;
+  outline-offset: 5px;
+}
+
+.site-footer {
+  margin-top: auto;
+  padding-top: 48px;
+  color: #999999;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+@media (max-width: 420px) {
+  .page {
+    width: min(100% - 28px, 720px);
+    padding-top: 42px;
+  }
+
+  .site-header {
+    margin-bottom: 42px;
+  }
+
+  .menu-button {
+    min-height: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-button {
+    transition: none;
+  }
+}
